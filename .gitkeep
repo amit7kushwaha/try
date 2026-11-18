@@ -1,1 +1,13 @@
 
+-- Grant database and role creation privileges
+ALTER ROLE fasika WITH CREATEDB CREATEROLE;
+
+-- Set a connection limit and password expiration timestamp
+ALTER ROLE fasika WITH CONNECTION LIMIT 5 VALID UNTIL '2026-12-31 23:59:59';
+
+-- Update or remove a password
+ALTER ROLE fasika WITH PASSWORD 'new_password';
+ALTER ROLE fasika WITH PASSWORD NULL;
+
+-- Remove attributes (e.g., disable login, superuser, or row-level security bypass)
+ALTER ROLE fasika WITH NOLOGIN NOSUPERUSER NOBYPASSRLS;
