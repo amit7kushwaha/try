@@ -28,3 +28,10 @@ WHERE rolname IN ('mulu', 'Beza', 'beza');
 
 REASSIGN OWNED BY <target_role> TO postgres;
 DROP OWNED BY <target_role>;
+
+
+CREATE TABLE Customers (
+    customer_id INT GENERATED ALWAYS AS IDENTITY,
+    customer_name VARCHAR(150) NOT NULL,
+    PRIMARY KEY (customer_id)
+);
